@@ -1,6 +1,20 @@
-.box{
+.box {
     min-width: 100px;
     min-height: 100px;
     padding: 30px;
     border: 1px solid #000;
 }
+
+.list-item {
+    list-style: none;
+    background: orangered;
+    margin: 5px 0;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.add-class{
+    background-color: maroon;
+}
+

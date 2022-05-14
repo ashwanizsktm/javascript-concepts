@@ -3,7 +3,7 @@
 // method => obj
 // function => globle(window, global)
 // this inside object.
-/*
+
 const video = {
     title: 'video-title',
     play() {
@@ -17,7 +17,7 @@ console.log(this);
 // Again this referes to video object.
 };
 video.stop();
-*/
+
 
 // this inside function
 /*
