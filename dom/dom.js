@@ -23,17 +23,18 @@ let headerStyle = {
     background: 'green'
   };
 
-  for (let style in headerStyle) {
-    header.style[style] = headerStyle[style];
+  for (let sty in headerStyle) {
+    header.style[sty] = headerStyle[sty];
   }
   
   const subheading = Array.from(document.getElementsByTagName("h2"));
   subheading.forEach((ele) => {
-      ele.style.color="red";
+      ele.style.color="maroon";
   });
 
 //   main
 const main = document.querySelector(".main");
+
 main.style.cssText = "display: flex; justify-content: space-around";
 //   sidebar 
 const sidebar = document.querySelector(".sidebar");
@@ -45,7 +46,6 @@ Object.assign(sidebar.style, {
 })
 
 const section = document.querySelector('.section');
-
 
 
 const list = document.createElement('ul');
@@ -66,7 +66,7 @@ section.appendChild(list);
 
 const number = ['one', 'two','three','four'];
 
-let listItemAll = document.querySelectorAll('.list-item');
+let listItemAll = document.querySelectorAll('.list-item');  //it returns nodeList and we can apply array methods on it.
  
 listItemAll.forEach((item, id) => {
  item.innerHTML+= ' ' + number[id];
@@ -91,5 +91,15 @@ const btn = document.getElementsByTagName('button')[0];
 const btn1 = document.querySelector('.remove-btn');
 
 btn.addEventListener('click', addBg);
-
 btn1.addEventListener('click', removeBg);
+
+// traversing the dom
+const sectionParent = section.parentElement;
+const sectionPrevElement = section.previousElementSibling;
+const sectionNextElement = section.nextElementSibling;
+
+sectionNextElement.style.cssText="background: #000; color: #fff;"
+sectionPrevElement.style.color= "green";
+sectionParent.classList.add('add-class');
+
+console.log(main.children);
