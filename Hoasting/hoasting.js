@@ -1,4 +1,10 @@
-// Hoasting means we can call the function even before we have initialize it.
+// Hoasting :- the declaraction is hoisted on the top. The core prinicple of hosting is how javascript runs behind the scene
+
+/*
+ once javascript runs the js engine divde the code in 2 category first is the memory allocation and the send is the code 
+ execution all the variables and function get allocated to the memory i.e varible get allocated in momory with undefind
+ and function 
+*/
 
 // variable with var is always hoisted it put the declaraction at the top. 
 

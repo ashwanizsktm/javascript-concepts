@@ -60,9 +60,9 @@ let nums = [5, 6, 5, 2, 1, 7, 6];
 
 
 let uniqueNums = nums.filter((num, idx) => {
-    return nums.indexOf(num) === idx;
+  return nums.indexOf(num) === idx;
 
-    // if want to get the only duplicates then we just need to do reverse
+  // if want to get the only duplicates then we just need to do reverse
   //  return nums.indexOf(num) != idx;
 });
 
@@ -91,8 +91,8 @@ function foo() {
   }
   foo();
 */
-  // console.log('typeof a: '+ typeof a);  //undefined
-  // console.log('typeof b: '+ typeof b);  // number
+// console.log('typeof a: '+ typeof a);  //undefined
+// console.log('typeof b: '+ typeof b);  // number
 
 //  typeof a is 'undefined'.
 //  The variable a exists within foo() scope and not available in the outside scope.
@@ -103,14 +103,14 @@ function foo() {
 // No variable b is declared neither in the foo() scope or global scope. 
 // So JavaScript interprets b = 0 expression as window.b = 0. which turns type of b is number. 
 
- /*
-  function sum(...inputs) {
-    let total = 0;
-    for(let i of inputs) {
-     total =  total + i;
-    }
-    return total;
-  }
+/*
+ function sum(...inputs) {
+   let total = 0;
+   for(let i of inputs) {
+    total =  total + i;
+   }
+   return total;
+ }
 */
 // function sum(a, b, c) {
 //     return a + b + c;
@@ -155,16 +155,16 @@ console.log(reversedArr);
 
 // 2 
 var reversedArr = [];
- /* 
+/* 
 arr.map((val) => {
-    reversedArr.unshift(val);
+   reversedArr.unshift(val);
 });
 // console.log(reversedArr);
 */
 
 // ways to empty an array
 
-let a = [1,2,3];
+let a = [1, 2, 3];
 
 // 1. 
 /*
@@ -207,8 +207,8 @@ let temp;
   console.log(myArr);
   */
 
-  // now I can get what element I want
-  // console.log(myArr[3]);
+// now I can get what element I want
+// console.log(myArr[3]);
 
 /*
 function foo1()
@@ -268,7 +268,7 @@ A closure is a function, along with all variables or functions that were in-scop
 function reverseString(str) {
   var newString = "";
   for (var i = str.length - 1; i >= 0; i--) {
-      newString += str[i];
+    newString += str[i];
   }
   console.log(newString);
   return newString;

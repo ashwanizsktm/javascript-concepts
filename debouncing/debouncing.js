@@ -7,23 +7,20 @@ function getData() {
     console.log(`Fetching the data from APi ...${counter++}`);
 }
 
- function debounce(fn, delay) {
-    console.log("hellow world !");
-   let timer;
-  // any function can't be called after retutn keyword.
-   return args => {
+function debounce(fn, delay) {
+    let timer;
+    // any statement can't be called after retutn keyword.
+    return function () {
+        let args = arguments;
+        let self = this
         clearTimeout(timer);
-       timer = setTimeout(() => {
-           fn.apply(this, args);
-       }, delay);
-   };
+        timer = setTimeout(() => {
+            fn.apply(self, args);
+        }, delay);
+    };
 }
 
-function callAPI() {
-    debounce(getData, 500);
-}
-
-// const callAPI =  debounce(getData, 1000);
+const callAPI = debounce(getData, 400);
 
 
 

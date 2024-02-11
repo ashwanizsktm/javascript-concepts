@@ -23,17 +23,18 @@ console.log(bound(1, 2, 3));
 
 // summary
 /*
-var obj = {num: 2};
-
 var functionName = function(arg1, arg2, arg3) {
   return this.num + arg1 + arg2 + arg3;
 }
+
+var obj = {num: 2};
 
 //call. 
 functionName.call(obj, arg1, arg2, arg3);
 
 // Apply. 
-functionName.call(obj, [arg1, arg2, arg3]);
+let arr = [arg1, arg2, arg3]
+functionName.apply(obj, arr);
 
 // bind. 
  var bound = functionName.bind(obj);

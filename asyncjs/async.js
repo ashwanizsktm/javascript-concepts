@@ -13,13 +13,16 @@
 // is able to complete the task then it goes to then block(resolve => success) otherwise
 //  it goes to catch block(reject => error).
 
+/* technical
+A Promise is a special JavaScript object. It produces a value after an asynchronous (aka, async) operation completes successfully,
+ or an error if it does not complete successfully due to time out, network error, and so on.
+*/
+
 // promises will have 3 states => 1.pending,  2.Fulfilled,  3.Rejected.
 
 // EX. 1
 /*
-function bringMobile() {
-  return false;
-}
+let bringMobile = false;
 
 const getItems = new Promise((resolve, reject) => {
   if (bringMobile()) {
@@ -45,16 +48,12 @@ const meetings = new Promise((resolve, reject) => {
   if (hasMeeting) {
     const meetingDetails = {
       name: "Marketing Meetings ",
-      location: "Indore.",
+      location: "Banglore.",
       time: "1:00 PM",
     };
-
     resolve(meetingDetails);
-
   } else {
-
     reject("Meetings is Already Scheduled!");
-
   }
 });
 
@@ -69,32 +68,32 @@ const meetings = new Promise((resolve, reject) => {
 
 /*
 function addToCalender(meetingDetails) {
-  return new Promise(function(resolve, reject){
-    const calender =  `${meetingDetails.name} is scheduled at ${meetingDetails.time} 
+  return new Promise(function (resolve, reject) {
+    const calender = `${meetingDetails.name} is scheduled at ${meetingDetails.time}
     in ${meetingDetails.location}`;
     resolve(calender);
   });
 }
 */
 
-
 // this can be written in short let's see that.
-
-const addToCalender = params => {
-  const calender =  `${params.name} is scheduled at ${params.time} 
+/*
+const addToCalender = (params) => {
+  const calender = `${params.name} is scheduled at ${params.time}
   in ${params.location}`;
   return Promise.resolve(calender);
 };
-
+*/
 
 // chaining addtocalender promise over meetings promise to use their properties.
 /*
 meetings.then(addToCalender).then((res) => {
-    console.log("Success => ", res);
-  }).catch((err) => {
-    console.log("Error => ", err);
+  console.log("Success => ", res);
+}).catch((err) => {
+  console.log("Error => ", err);
 });
 */
+
 
 
 // there are cases where will be more than one promises then we would have to write
@@ -116,14 +115,13 @@ const promise2 = new Promise((resolve, reject) => {
     resolve("Promise 2 is Complete!");
   }, 2000);
 });
-
 */
-
-// promise1.then(res => console.log(res));
-// promise2.then(res => console.log(res));
-
+/*
+promise1.then(res => console.log(res));
+promise2.then(res => console.log(res));
+*/
 // here promise 2 is getting resolved 2 sec later.
-// To resolve all together there is promise.all.
+// To resolve all together there is promise.all
 
 // Promise.all([promise1, promise2]).then(res => console.log(res));
 
@@ -136,35 +134,20 @@ Promise.race([promise1, promise2]).then((result) => {
 });
 */
 
-// Async await let's refer the prev example:-
-/*
-async function myMeetings() {
-  try {
-    const meetingDetails = await meetings;
-    const message = await addToCalender(meetingDetails);
-     console.log(message);
-  } catch (error) {
-    console.log(error);
-  }
-}
-myMeetings();
-*/
-
-
 
 // Fetch Api:- fetch is a way to may API async request to different network. using GET POST PUT DELETE
 // it actully return the promise
 // to handle errors we don't use catch block instead we use
 /*
 fetch('https://jsonplaceholder.typicode.com/users/')
-.then(res=>{
-  if(res.ok) {
-    console.log('SUCCESS !!');
-  } else{
-    console.log("Not SuccessFull !!!");
-  }
-})
-.then(data => console.log(data));
+  .then(res => {
+    if (res.ok) {
+      console.log('SUCCESS !!');
+    } else {
+      console.log("Not SuccessFull !!!");
+    }
+  })
+  .then(data => console.log(data));
 */
 
 // now with options method
@@ -172,16 +155,17 @@ fetch('https://jsonplaceholder.typicode.com/users/')
 fetch('https://jsonplaceholder.typicode.com/users', {
   method: 'POST',
   headers: {
-   'Content-Type': 'application/json'
+    'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    name: 'Priyanka',
-    class: "singler"
+    name: 'maximillian',
+    class: "Instructor"
   })
 }).then(res => {
-  res.json().then(data=> console.log(data));
+  res.json().then(data => console.log(data));
 });
 */
+
 
 
 // callback function.
@@ -220,7 +204,7 @@ show(function run(a) {
 // this message is callback fn it is getting exected after a period of time i.e. call back me later
 // this helps to achive Async programming.
 /*
-const message = function() {  
+const message = function() {
   console.log("This message is shown after 2 seconds");
 };
 setTimeout(message, 2000);
@@ -266,9 +250,19 @@ console.log("before calling Ashwani");
 
 let a = ashwani();
 
-a.then(res =>  console.log("api data",res)).catch(err => console.log(err));
+a.then(res => console.log("api data", res)).catch(err => console.log(err));
 
 console.log("after calling ashwani");
 console.log(a);
 console.log("Last line of JS file");
 */
+// o/p 
+/**
+ * before calling ashwani
+ * inside ashwani functions
+ * after calling ashwani
+ * before response
+ * user resolved
+ * api data
+ */
+
